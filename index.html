@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+   <!--etiqueta head donde estan los metadatos-->
+ <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <!--titulo de la pagina-->   
+      <title>PULSO-3D</title>
+   <!--conexion con archivo css-->   
+      <link rel="stylesheet" href="estilo.css" title="" type="" />
+   <!--conexion con archivo java script-->   
+      <script type="text/javascript" charset="utf-8" src="scripts.js"> </script>
+   <!--conexion con pagina web de fuemtes de letras-->   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+    
+   <!--contenido de la pagina web-->   
+<body>
+   <!--primer menu contiene titulo y boton de pagar pedido-->   
+ <div class="pagina-nav">
+   <!--titulo de mi pagina web-->   
+     <h1>PULSO 3D</h1>
+   <!--boton de pegar esquina superior derecha-->   
+     <button id="checkout" class="button-checkout"onclick="pay()">El total es:</button>
+ </div>
+ 
+   <!--segundo menu con enlaces a otras paginas-->   
+  <nav>
+   <!--titulo del menu a continuacion del primer menu-->   
+     <h2>MENU PULSO-3D</h2>
+   <!--boton que desplega el menu-->   
+      <input class="boton-menu" id="toggle" type="checkbox" checked>
+   <!--lista dwsordenada contenedora del menu de inicio-->   
+   <ul>
+   <!--enlaces del menu-->   
+     <li><a href="#">Section 01</a></li>
+     <li><a href="#">Section 02</a></li>
+     <li><a href="#">Section 03</a></li>
+     <li><a href="#">Section 04</a></li>
+   </ul>
+</nav>
+      
+   <!--este div contiene todo el contenido de la pagina se usa de referencia para dar tamaño margin y padding-->   
+ <div class="pagina-content">
+        
+   <!--contenedor de productos se repite dependiendo de cuantos articulos se desean mostrar en vitrina-->   
+   <div class="producto-container">
+   <!--titulo del arriculo-->   
+          <h3>.-AVION</h3>
+   <!--imagen del articulo a vender-->   
+          <img src="imagenes/producto-1.jpg" />
+   <!--descripcion del articulo-->   
+         <h3 class="descripcion">Bonito adorno navideño especial <br /> para regalo en Estas fiestas <br /> navideñas encargos ha pedido</h3>
+   <!--valor del articulo-->   
+          <h1>$31.000</h1>
+   <!--boton de cotizacion de precio que se visualiza en el boton de pagar del primer menu -->   
+          <button class="button-add" onclick="add('producto-AVION', 31000)">cotizar</button>
+        </div>
+        
+   <!--segundo articulo-->   
+  <div class="producto-container">
+          <h3>.-TERMINATOR</h3>
+          <img src="imagenes/producto-2.jpg" />
+          <h3 class="descripcion">Bonito adorno navideño especial <br /> para regalo en Estas fiestas <br /> navideñas encargos ha pedido</h3>
+          <h1>$22.000</h1>
+          <button class="button-add" onclick="add('producto-TERMINATOR', 22000)">cotizar</button>
+        </div>
+        
+   <!--tercer articulo-->   
+  <div class="producto-container">
+          <h3>.-ADORNO NAV. MIKEY</h3>
+          <img src="imagenes/producto-3.jpg" />
+          <h3 class="descripcion">Bonito adorno navideño especial <br /> para regalo en Estas fiestas <br /> navideñas encargos ha pedido</h3>
+          <h1>$10.000</h1>
+          <button class="button-add" onclick="add('producto-ADR.NAV.MIKEY', 10000)">cotizar</button>
+        </div>
+        
+   <!--cuarto articulo-->   
+  <div class="producto-container">
+          <h3>.-ADORNO NAV. MIKEY 2</h3>
+          <img src="imagenes/producto-4.jpg" />
+          <h3 class="descripcion">Bonito adorno navideño especial <br /> para regalo en Estas fiestas <br /> navideñas encargos ha pedido</h3>
+          <h1>$15.000</h1>
+          <button class="button-add" onclick="add('producto-ADR.NAV.MIKEY2', 15000)">cotizar</button>
+        </div>
+        
+   <!--quinto articulo-->   
+  <div class="producto-container">
+          <h3>.-FREDDY KRUGER</h3>
+          <img src="imagenes/producto-5.jpg" />
+          <h3 class="descripcion">Bonito adorno navideño especial <br /> para regalo en Estas fiestas <br /> navideñas encargos ha pedido</h3>
+          <h1>$45.000</h1>
+          <button class="button-add" onclick="add('producto-FREDDY.KRUGER', 45000)" >cotizar</button>
+        </div>
+        
+   <!--sexto articulo-->   
+  <div class="producto-container">
+          <h3>.-ALCON MILENARIO</h3>
+          <img src="imagenes/producto-6.jpg" />
+           <h3 class="descripcion">Bonito adorno navideño especial <br /> para regalo en Estas fiestas <br /> navideñas encargos ha pedido</h3>
+          <h1>$25.000</h1>
+          <button class="button-add" onclick="add('producto-ALCON.MILENARIO', 25000)">cotizar</button>
+        </div>
+        
+  
+   <!--div contenedor de formulario de pedido le di la clase producto-container para que siguiera el diseño de la pagina-->  
+   <div class="producto-container">
+          
+   <!--el contenedor form me permite dar el action emtrelazar mi orden php que en este caso seria "PEDIDO.PHP" lo cual permite que al presionar enviar se registre el pedido en un archivo txt llamado "PEDIDO.TXT" que queda en la carpeta fuente de la pagina web-->   
+    <form action="pedido.php" method="post" accept-charset="utf-8" class="pedido-container">
+   <!--nombre del primer recuadro del formulario el cual pide el numero de celular-->   
+    <h1>Nuemro Celular</h1>
+    <!--casilla donde se ingresa el numero de celular-->
+    <input type="number" name="celular" id="celular" value="" placeholder="ingresa tu numero"/>
+<!--nombre del segundo recuadro del formulario el cual pide escribir que articulos quiere-->   
+    <h1>Anota tus Articulos</h1>
+   <!--casilla donde se escribe que articulos se quieren pedir--> 
+    <input type="text" name="pedido" id="pedido" value="" placeholder="ingresa que productos nesecitas" />
+   <!--boton de enviar--> 
+    <input type="submit" name="enviar" id="enviar" value="pedido" class=""/>
+    
+  </form>
+   </div>
+        
+      </div>
+      
+</body> 
+
+</html>
